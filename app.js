@@ -9,15 +9,6 @@ var flash = require('connect-flash');
 var passport = require('passport');
 var passportsetup = require('./config/passport-setup');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-
-
-const port = process.env.PORT || 3000
-
 
 //bring ejs template
 app.set('view engine', 'ejs');
