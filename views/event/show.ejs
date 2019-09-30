@@ -1,0 +1,28 @@
+
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+      
+
+    <h1>This is show singl page</h1>
+
+    <div class="card col-md-6 offset-md-3 mb-3 text-center ">
+
+        <div class="card-body">
+            <h5 class="card-title card-header "><%=event.title%></h5>
+            <hr>
+            <p class="card-text "><%=event.discription%></p>
+            <p class="card-text"><%=event.location%></p>
+            <p><span class="badge badge-secondary"> <%= event.date.toDateString()%></span></p>
+
+
+            <%if ((user) && (user.id == event.user_id)) {%>
+                <a href="<%= '/events/edit/' + event.id %>" class="btn btn-primary">Edit</a>
+                <button class=" btn btn-danger" onclick="deleteEvent()" data-id="<%= event.id %>"  id="deleteBtn" >Delete</button>        
+            <%}%>
+        
+        </div>
+    </div>
+        
+    
+<%- include('../partials/footer') -%>
+
